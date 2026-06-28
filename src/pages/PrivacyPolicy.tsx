@@ -9,6 +9,7 @@ export const PrivacyPolicy = () => {
       <div className="page-header">
         <div className="container">
           <h1 className="page-title">プライバシーポリシー</h1>
+          <p>当サイトの個人情報の取扱いについて</p>
         </div>
       </div>
 

@@ -9,6 +9,7 @@ export const TermsAndConditions = () => {
       <div className="page-header">
         <div className="container">
           <h1 className="page-title">利用規約</h1>
+          <p>当サイトの利用条件について</p>
         </div>
       </div>
 

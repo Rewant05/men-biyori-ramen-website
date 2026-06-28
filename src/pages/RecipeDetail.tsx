@@ -31,7 +31,9 @@ export const RecipeDetail = () => {
       <section className="section section-light">
         <div className="container" style={{ maxWidth: '900px' }}>
           {recipe.image && (
-            <div style={{ marginBottom: '3rem', width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', backgroundImage: `url(${recipe.image})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: 'var(--shadow-md)' }}></div>
+            <div style={{ marginBottom: '3rem', width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', position: 'relative', boxShadow: 'var(--shadow-md)' }}>
+              <img src={recipe.image} alt={recipe.name} loading="eager" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
           )}
           
           <div className="flex justify-center gap-lg" style={{ marginBottom: '3rem', flexWrap: 'wrap' }}>

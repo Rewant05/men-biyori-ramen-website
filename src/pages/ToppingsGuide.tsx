@@ -7,11 +7,12 @@ export const ToppingsGuide = () => {
     <div>
       <SEO title="トッピングガイド" />
       
-      <div className="page-header" style={{ position: 'relative', overflow: 'hidden', backgroundImage: 'url(/images/toppings_hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '6rem 0' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(62, 39, 35, 0.7)' }}></div>
+      <div className="page-header" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
+        <img src="/images/toppings_hero.png" alt="Toppings Hero" fetchPriority="high" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(62, 39, 35, 0.7)', zIndex: 1 }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <h1 className="page-title">トッピングガイド</h1>
-          <p>一杯を彩る、名脇役たちの役割</p>
+          <p>一杯の完成度を高める、名脇役たち</p>
         </div>
       </div>
 

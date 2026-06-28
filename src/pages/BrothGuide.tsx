@@ -7,11 +7,12 @@ export const BrothGuide = () => {
     <div>
       <SEO title="スープガイド" />
       
-      <div className="page-header" style={{ position: 'relative', overflow: 'hidden', backgroundImage: 'url(/images/broth_hero.png)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '6rem 0' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(62, 39, 35, 0.7)' }}></div>
+      <div className="page-header" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
+        <img src="/images/broth_hero.png" alt="Broth Hero" fetchPriority="high" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(62, 39, 35, 0.7)', zIndex: 1 }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <h1 className="page-title">スープガイド</h1>
-          <p>ラーメンの土台となる「出汁」の知識</p>
+          <p>ラーメンの骨格となる、5つの基本出汁</p>
         </div>
       </div>
 

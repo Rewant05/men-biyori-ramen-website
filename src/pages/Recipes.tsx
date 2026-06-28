@@ -41,8 +41,12 @@ export const Recipes = () => {
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '2rem' }}>
             {filteredRecipes.map(recipe => (
               <Link to={`/recipes/${recipe.id}`} key={recipe.id} className="card">
-                <div className="card-image" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-noodle-light)', backgroundImage: `url(${recipe.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                   {!recipe.image && <span className="text-serif text-brown" style={{ fontSize: '1.25rem' }}>{recipe.category}</span>}
+                <div className="card-image" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-noodle-light)', position: 'relative', overflow: 'hidden' }}>
+                   {recipe.image ? (
+                     <img src={recipe.image} alt={recipe.name} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+                   ) : (
+                     <span className="text-serif text-brown" style={{ fontSize: '1.25rem', position: 'relative', zIndex: 1 }}>{recipe.category}</span>
+                   )}
                 </div>
                 <div className="card-content">
                   <div className="card-meta">

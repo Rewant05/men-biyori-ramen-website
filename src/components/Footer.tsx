@@ -44,7 +44,7 @@ export const Footer = React.memo(() => {
           </div>
         </div>
         
-        <div className="safety-notice" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#ccc', borderLeftColor: 'var(--color-noodle-yellow)' }}>
+        <div className="safety-notice" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff', borderLeftColor: 'var(--color-noodle-yellow)' }}>
           <p style={{ fontSize: '0.85rem' }}>{siteData.foodSafetyDisclaimer}</p>
         </div>
 

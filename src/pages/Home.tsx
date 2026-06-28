@@ -13,8 +13,9 @@ export const Home = () => {
       <SEO title="ホーム" />
       
       {/* Hero Section */}
-      <section className="section section-dark" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0', backgroundImage: 'url(/images/hero.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(62, 39, 35, 0.7)' }}></div>
+      <section className="section section-dark" style={{ position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
+        <img src="/images/hero.png" alt="Hero Background" fetchPriority="high" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(62, 39, 35, 0.7)', zIndex: 1 }}></div>
         <div className="container text-center" style={{ position: 'relative', zIndex: 2 }}>
           <div className="steam-container">
             <h1 className="page-title">「家でつくる一杯を、もっと深く、もっと楽しく。」</h1>
@@ -72,8 +73,12 @@ export const Home = () => {
             <h2 className="section-title">今週のおすすめレシピ</h2>
           </div>
           <div className="card" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', height: 'auto' }}>
-            <div style={{ flex: '1 1 300px', backgroundColor: 'var(--color-soy-brown)', minHeight: '250px', backgroundImage: `url(${featuredRecipe.image})`, backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {!featuredRecipe.image && <span className="text-serif" style={{ color: 'var(--color-noodle-yellow)', fontSize: '2rem' }}>{featuredRecipe.name}</span>}
+            <div style={{ flex: '1 1 300px', backgroundColor: 'var(--color-soy-brown)', minHeight: '250px', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {featuredRecipe.image ? (
+                <img src={featuredRecipe.image} alt={featuredRecipe.name} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+              ) : (
+                <span className="text-serif" style={{ color: 'var(--color-noodle-yellow)', fontSize: '2rem', position: 'relative', zIndex: 1 }}>{featuredRecipe.name}</span>
+              )}
             </div>
             <div style={{ flex: '2 1 400px', padding: '2rem' }}>
               <div className="flex gap-sm items-center" style={{ marginBottom: '1rem' }}>
@@ -102,8 +107,12 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: '1.5rem' }}>
             {popularRecipes.map(recipe => (
               <Link to="/recipes" key={recipe.id} className="card">
-                <div className="card-image" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#e0d8c0', backgroundImage: `url(${recipe.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                   {!recipe.image && <span className="text-serif text-brown">{recipe.category}</span>}
+                <div className="card-image" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#e0d8c0', position: 'relative', overflow: 'hidden' }}>
+                   {recipe.image ? (
+                     <img src={recipe.image} alt={recipe.name} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
+                   ) : (
+                     <span className="text-serif text-brown" style={{ position: 'relative', zIndex: 1 }}>{recipe.category}</span>
+                   )}
                 </div>
                 <div className="card-content">
                   <div className="card-meta">
